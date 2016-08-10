@@ -59,10 +59,10 @@
 			</div>
 
 			<uib-tabset active="activeJustified" justified="true">
-				<uib-tab index="$index" heading="{{tabItem.heading}}" ng-repeat="tabItem in tabItems">
-					<div class="messages"> 
-						<div ng-repeat="msg in messages track by $index">
-							{{msg}}
+				<uib-tab index="$index" heading="{{accountId}}" ng-repeat="(accountId, accountObj) in tabItems" ng-click="onChangeTab(accountId)">
+					<div class="messages">
+						<div ng-repeat="message in accountObj track by $index">
+							{{message}}
 						</div>
 					</div>
 				</uib-tab>
@@ -70,9 +70,9 @@
 			
 			<div class="inputForm">
 				<form>
-					<input id="inputMSg" ng-model="inputMsg" type="text" />
+					<input id="inputMsg" ng-model="inputMsg" type="text" />
 					<input type="button" value="送出" ng-click="sendMsg(inputMsg)" />
-				</form>						
+				</form>	
 			</div>
 		</div>
 	</body>

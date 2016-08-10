@@ -10,6 +10,7 @@ var accountSchema = new Schema({
     versionKey: false
 });
 
+/* 判斷使用者是否輸入正確的密碼 */
 accountSchema.methods.validPassword = function(pwd) {
     // EXAMPLE CODE!
     return ( this.password === pwd );
